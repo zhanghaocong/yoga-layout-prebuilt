@@ -18,7 +18,9 @@ var nbind = require('../build/Release/nbind.js');
 var ran = false;
 var ret = null;
 
-nbind({}, function (err, result) {
+nbind({
+  TOTAL_MEMORY: 134217728 * 2
+}, function (err, result) {
   if (ran) {
     return;
   }
