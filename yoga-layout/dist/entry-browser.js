@@ -18,8 +18,14 @@ var nbind = require('../build/Release/nbind.js');
 var ran = false;
 var ret = null;
 
+const YOGA_TOTAL_MEMORY = typeof window.YOGA_TOTAL_MEMORY === 'number'
+  ? window.YOGA_TOTAL_MEMORY
+  : 134217728 * 2
+
+console.info('YOGA_TOTAL_MEMORY', YOGA_TOTAL_MEMORY)
+
 nbind({
-  TOTAL_MEMORY: 134217728 * 2
+  TOTAL_MEMORY: YOGA_TOTAL_MEMORY
 }, function (err, result) {
   if (ran) {
     return;
