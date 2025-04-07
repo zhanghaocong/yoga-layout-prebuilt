@@ -22,7 +22,9 @@ const YOGA_TOTAL_MEMORY = typeof window.YOGA_TOTAL_MEMORY === 'number'
   ? window.YOGA_TOTAL_MEMORY
   : 134217728 * 2
 
-console.info('YOGA_TOTAL_MEMORY', YOGA_TOTAL_MEMORY)
+if (window.YOGA_DEBUG) {
+  console.info('YOGA_TOTAL_MEMORY', YOGA_TOTAL_MEMORY)
+}
 
 nbind({
   TOTAL_MEMORY: YOGA_TOTAL_MEMORY
